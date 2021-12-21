@@ -63,6 +63,8 @@ footer {
   padding: 5px;
 }
 
+/* Styling for the POP UP Window */
+
 #comments_popup {
   position: fixed;
   z-index: 10;
@@ -86,6 +88,10 @@ footer {
 
 #popup_picture_container {
   max-width: 300px;
+  /* border:  10px solid var(--secondary-blue); */
+  box-shadow: 0 0 0 10px var(--secondary-blue);
+  background: var(--footer-blue);
+  border-radius: 10px;
 }
 
 #popup_picture {
