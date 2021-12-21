@@ -1,0 +1,29 @@
+:root {
+  --primary-blue: #0075be;
+  --primary-red: #fb1b1b;
+  --primary-yellow: #fc0;
+  --footer-blue: #30a7d7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+footer {
+  background-color: var(--footer-blue);
+  align-items: center;
+}
+
+#footer-logo {
+  width: 40px;
+}
+
+#pokeball-logo {
+  width: 100%;
+  padding: 5px;
+}
