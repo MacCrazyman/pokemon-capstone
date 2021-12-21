@@ -1,14 +1,12 @@
 // IMPORTS
 import './style.css';
-import { getPokemon, arrayPokemonLinks, getPokemonInfo } from './apiFunctions.js';
+import arrayPokemonLinks from './apiFunctions.js';
 
 // ELEMENTS
 const pokemonContainer = document.querySelector('#pokemon-container');
 
 // FUNCTIONS
-const capitalizeString = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 const createLi = (name, image) => {
   const li = document.createElement('li');
@@ -27,6 +25,18 @@ const createLi = (name, image) => {
   li.appendChild(likeButton);
   li.appendChild(commentButton);
   return li;
+};
+
+const getPokemonInfo = async () => {
+  const array = await arrayPokemonLinks();
+  const pokemonArray = [];
+  array.forEach(async (url) => {
+    const data = await fetch(url).then((response) => response.json());
+    pokemonArray.push(data);
+    const element = createLi(capitalizeString(data.name), data.sprites.front_shiny);
+    pokemonContainer.appendChild(element);
+  });
+  return pokemonArray;
 };
 
 getPokemonInfo();
