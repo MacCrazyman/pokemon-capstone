@@ -19,13 +19,17 @@ const createLi = (name, image) => {
   const commentButton = document.createElement('button');
   pokemonName.textContent = name;
   pokemonImage.src = image;
+  likeButton.textContent = 'Like';
+  commentButton.textContent = 'Comment';
   imageDiv.appendChild(pokemonImage);
   li.appendChild(imageDiv);
   li.appendChild(pokemonName);
   li.appendChild(likeButton);
   li.appendChild(commentButton);
+  return li;
 };
 
-const renderPokemon = async () => {
-  const array = await getPokemonInfo();
-}
+getPokemonInfo();
+
+// EXPORTS
+export { createLi, capitalizeString, pokemonContainer };

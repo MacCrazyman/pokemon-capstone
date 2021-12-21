@@ -1,3 +1,6 @@
+// IMPORTS
+import { createLi, capitalizeString, pokemonContainer } from './index.js';
+
 const getPokemon = () => {
   return fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0/`).then((response) => response.json());
 };
@@ -18,8 +21,9 @@ const getPokemonInfo = async () => {
   array.forEach(async url => {
     const data = await fetch(url).then((response) => response.json());
     pokemonArray.push(data);
+    const element = createLi(capitalizeString(data.name), data.sprites.front_shiny);
+    pokemonContainer.appendChild(element);
   });
-  console.log(pokemonArray);
   return pokemonArray;
 }
   
