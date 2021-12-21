@@ -1,5 +1,6 @@
 :root {
   --primary-blue: #0075be;
+  --secondary-blue: #0A285F;
   --primary-red: #fb1b1b;
   --primary-yellow: #fc0;
   --footer-blue: #30a7d7;
@@ -60,4 +61,71 @@ footer {
 #pokeball-logo {
   width: 100%;
   padding: 5px;
+}
+
+#comments_popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em;
+  backdrop-filter: blur(5px);
+}
+
+#popup_container {
+  background: white;
+  border: 5px solid var(--secondary-blue);
+  padding: 1em;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-y: auto;
+  height: 90vh;
+}
+
+#popup_picture_container {
+  max-width: 300px;
+}
+
+#popup_picture {
+  width: 100%;
+}
+
+#popup_close {
+  width: 40px;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.5em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+#popup_details {
+  width: 50%;
+  height: 150px;
+  border: 2px solid var(--secondary-blue);
+}
+
+#popup_comments {
+  width: 100%;
+  text-align: -webkit-center;
+}
+
+#comments_box {
+  width: 50%;
+  height: 150px;
+  border: 2px solid var(--secondary-blue);
+  overflow-y: auto;
+}
+
+#popup_add_comments {
+  text-align: -webkit-center;
+}
+
+#add_comment_form {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem
 }
