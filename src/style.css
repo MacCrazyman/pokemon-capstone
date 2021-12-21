@@ -1,8 +1,8 @@
 :root {
-  --primary-blue: #0075BE;
-  --primary-red: #FB1B1B;
-  --primary-yellow: #FFCC00;
-  --footer-blue: #30A7D7;
+  --primary-blue: #0075be;
+  --primary-red: #fb1b1b;
+  --primary-yellow: #fc0;
+  --footer-blue: #30a7d7;
 }
 
 * {
@@ -12,7 +12,6 @@
 
 .flex {
   display: flex;
-
 }
 
 footer {
