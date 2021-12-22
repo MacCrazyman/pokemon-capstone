@@ -2,7 +2,7 @@
 //   method: 'POST',
 // })
 // .then(response => console.log('Success:', response));
-
+import { capitalizeString } from ".";
 const appId = '2VoylRMjGXYqZZMlt91a';
 const involvementAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}`;
 
@@ -21,7 +21,7 @@ const fillPopUp = (selectedPokemon) => {
   const weight = document.querySelector('#property_weight');
   const baseXp = document.querySelector('#property_baseXp');
   picture.src = selectedPokemon.sprites.other.dream_world.front_default;
-  name.textContent = selectedPokemon.name;
+  name.textContent = capitalizeString(selectedPokemon.name);
   height.textContent = selectedPokemon.height;
   weight.textContent = selectedPokemon.weight;
   baseXp.textContent = selectedPokemon.base_experience;
