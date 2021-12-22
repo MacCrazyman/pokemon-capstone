@@ -73,6 +73,9 @@ footer {
   width: 100%;
   padding: 2em;
   backdrop-filter: blur(5px);
+  transition: 
+  transform 0.5s ease-in-out,
+  opacity 0.5s ease-in-out;
 }
 
 #popup_container {
@@ -88,7 +91,6 @@ footer {
 
 #popup_picture_container {
   max-width: 300px;
-  /* border:  10px solid var(--secondary-blue); */
   box-shadow: 0 0 0 10px var(--secondary-blue);
   background: var(--footer-blue);
   border-radius: 10px;
@@ -134,4 +136,13 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem
+}
+
+.hidden {
+  transform: translate(100%);
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }
