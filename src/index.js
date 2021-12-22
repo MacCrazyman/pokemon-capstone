@@ -10,7 +10,6 @@ const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
 const commentBox = document.querySelector('#comments_box');
 
-
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
