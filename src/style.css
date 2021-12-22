@@ -161,6 +161,10 @@ button:hover {
   gap: 0.5rem;
 }
 
+.detail_item>span {
+  margin-left: 5px;
+}
+
 .hidden {
   transform: translate(100%);
   opacity: 0;
