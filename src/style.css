@@ -165,6 +165,15 @@ button:hover {
   margin-left: 5px;
 }
 
+#popup_close {
+  transition: transform 0.3s ease-in-out;
+}
+
+#popup_close:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
 .hidden {
   transform: translate(100%);
   opacity: 0;
