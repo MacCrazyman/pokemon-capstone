@@ -2,7 +2,6 @@
 import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
 import { fillPopUp, submitComment, getComments } from './popup.js';
-import { pokemon } from './fake_pokemon.js';
 // ELEMENTS
 const popUpWindow = document.querySelector('#comments_popup');
 const pokemonContainer = document.querySelector('#pokemon-container');
@@ -30,7 +29,7 @@ const createComment = (commentObject) => {
 const cleanForm = () => {
   userField.value = '';
   commentField.value = '';
-}
+};
 
 const createLi = (name, image, pokemonInfo) => {
   // CONSTANT ELEMENTS
@@ -46,8 +45,8 @@ const createLi = (name, image, pokemonInfo) => {
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
     });
-  }
-  const formEvent = (event)=> {
+  };
+  const formEvent = (event) => {
     event.preventDefault();
     const commentItem = {
       item_id: pokemonInfo.name,
@@ -59,7 +58,7 @@ const createLi = (name, image, pokemonInfo) => {
       updateComments();
       cleanForm();
     });
-  }
+  };
   // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
   pokemonImage.src = image;
@@ -71,13 +70,13 @@ const createLi = (name, image, pokemonInfo) => {
     popUpWindow.classList.add('show');
     fillPopUp(pokemonInfo);
     updateComments();
-    commentForm.addEventListener('submit', formEvent );
+    commentForm.addEventListener('submit', formEvent);
   });
   closePopUp.addEventListener('click', () => {
     popUpWindow.classList.remove('show');
     popUpWindow.classList.add('hidden');
     commentTable.innerHTML = '';
-    commentForm.removeEventListener('submit', formEvent)
+    commentForm.removeEventListener('submit', formEvent);
     cleanForm();
   });
   // APPEND ELEMENTS
@@ -101,7 +100,6 @@ const getPokemonInfo = async () => {
   return pokemonArray;
 };
 // EVENT LISTENERS
-
 
 // CALL FUNCTIONS
 
