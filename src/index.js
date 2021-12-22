@@ -5,6 +5,7 @@ import {pokemon} from './fake_pokemon.js';
 const commentForm = document.querySelector('#add_comment_form');
 const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
+const commentBox = document.querySelector('#comments_box');
 
 commentForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -18,4 +19,6 @@ commentForm.addEventListener('submit', (event) => {
 
 fillPopUp(pokemon);
 
-getComments(pokemon.name).then((response) => console.log(response));
+getComments(pokemon.name).then((Response) => {
+  commentBox.textContent = Response;
+});

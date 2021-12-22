@@ -8,7 +8,7 @@ const involvementAPI = `https://us-central1-involvement-api.cloudfunctions.net/c
 
 
 const getComments = (pokemon_name) => {
-  return fetch(`${involvementAPI}/comments?item_id=${pokemon_name}`)
+  return fetch(`${involvementAPI}/comments?item_id=${pokemon_name}`).then((response) => response.text());
 };
 
 const submitComment = (newComment) => {
