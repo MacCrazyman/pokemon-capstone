@@ -27,6 +27,11 @@ const createComment = (commentObject) => {
   commentTable.appendChild(commentRow);
 };
 
+const cleanForm = () => {
+  userField.value = '';
+  commentField.value = '';
+}
+
 const createLi = (name, image, pokemonInfo) => {
   // CONSTANT ELEMENTS
   const li = document.createElement('li');
@@ -44,6 +49,7 @@ const createLi = (name, image, pokemonInfo) => {
       comment: commentField.value,
     };
     submitComment(commentItem);
+    cleanForm();
   }
   // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
@@ -66,6 +72,7 @@ const createLi = (name, image, pokemonInfo) => {
     popUpWindow.classList.add('hidden');
     commentTable.innerHTML = '';
     commentForm.removeEventListener('submit', formEvent)
+    cleanForm();
   });
   // APPEND ELEMENTS
   imageDiv.appendChild(pokemonImage);
