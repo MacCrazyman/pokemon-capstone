@@ -15,6 +15,18 @@ const closePopUp = document.querySelector('#popup_close');
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
+const createComment = (commentObject) => {
+  const commentRow = document.createElement('tr');
+  const commentDate = document.createElement('td');
+  const commentUser = document.createElement('td');
+  const commentContent = document.createElement('td');
+  commentDate.textContent = commentObject.creation_date;
+  commentUser.textContent = commentObject.username;
+  commentContent.textContent = commentObject.comment;
+  commentRow.append(commentDate, commentUser, commentContent);
+  commentTable.appendChild(commentRow);
+};
+
 const createLi = (name, image, pokemonInfo) => {
   const li = document.createElement('li');
   const imageDiv = document.createElement('div');
@@ -34,7 +46,7 @@ const createLi = (name, image, pokemonInfo) => {
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
     });
-  })
+  });
   imageDiv.appendChild(pokemonImage);
   li.appendChild(imageDiv);
   li.appendChild(pokemonName);
@@ -42,18 +54,6 @@ const createLi = (name, image, pokemonInfo) => {
   li.appendChild(commentButton);
   return li;
 };
-
-const createComment = (commentObject) => {
-  const commentRow = document.createElement('tr');
-  const commentDate = document.createElement('td');
-  const commentUser = document.createElement('td');
-  const commentContent = document.createElement('td');
-  commentDate.textContent = commentObject.creation_date;
-  commentUser.textContent = commentObject.username;
-  commentContent.textContent = commentObject.comment;
-  commentRow.append(commentDate,commentUser,commentContent);
-  commentTable.appendChild(commentRow);
-}
 
 const getPokemonInfo = async () => {
   const array = await arrayPokemonLinks();
@@ -81,7 +81,7 @@ closePopUp.addEventListener('click', () => {
   popUpWindow.classList.remove('show');
   popUpWindow.classList.add('hidden');
   commentTable.innerHTML = '';
-})
+});
 // CALL FUNCTIONS
 
 getPokemonInfo();

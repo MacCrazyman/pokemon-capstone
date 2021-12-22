@@ -116,6 +116,7 @@ button:hover {
   position: absolute;
   top: 1em;
   right: 1em;
+  transition: transform 0.3s ease-in-out;
 }
 
 #popup_details {
@@ -161,12 +162,8 @@ button:hover {
   gap: 0.5rem;
 }
 
-.detail_item>span {
+.detail_item > span {
   margin-left: 5px;
-}
-
-#popup_close {
-  transition: transform 0.3s ease-in-out;
 }
 
 #popup_close:hover {
