@@ -1,4 +1,4 @@
-import { fillPopUp, submitComment } from './popup';
+import { fillPopUp, submitComment, getComments } from './popup';
 import './style.css';
 import {pokemon} from './fake_pokemon.js';
 
@@ -17,3 +17,5 @@ commentForm.addEventListener('submit', (event) => {
 })
 
 fillPopUp(pokemon);
+
+getComments(pokemon.name).then((response) => console.log(response));

@@ -7,8 +7,8 @@ const appId = '2VoylRMjGXYqZZMlt91a';
 const involvementAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}`;
 
 
-const getComments = () => {
-  return fetch(`${involvementAPI}/comments`).then((Response) => Response.json())
+const getComments = (pokemon_name) => {
+  return fetch(`${involvementAPI}/comments?item_id=${pokemon_name}`)
 };
 
 const submitComment = (newComment) => {
@@ -33,4 +33,4 @@ const fillPopUp = (selectedPokemon) => {
 }
 
 
-export {fillPopUp, submitComment}
+export {fillPopUp, submitComment, getComments}
