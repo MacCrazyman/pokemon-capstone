@@ -41,6 +41,12 @@ const createLi = (name, image, pokemonInfo) => {
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
   // FUNCTIONS FOR EVENT LISTENERS
+  const updateComments = () => {
+    getComments(pokemonInfo.name).then((response) => {
+      if (JSON.parse(response).error) return;
+      JSON.parse(response).forEach((element) => createComment(element));
+    });
+  }
   const formEvent = (event)=> {
     event.preventDefault();
     const commentItem = {
@@ -48,8 +54,11 @@ const createLi = (name, image, pokemonInfo) => {
       username: userField.value,
       comment: commentField.value,
     };
-    submitComment(commentItem);
-    cleanForm();
+    submitComment(commentItem).then(() => {
+      commentTable.innerHTML = '';
+      updateComments();
+      cleanForm();
+    });
   }
   // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
@@ -61,10 +70,7 @@ const createLi = (name, image, pokemonInfo) => {
     popUpWindow.classList.remove('hidden');
     popUpWindow.classList.add('show');
     fillPopUp(pokemonInfo);
-    getComments(pokemonInfo.name).then((response) => {
-      if (JSON.parse(response).error) return;
-      JSON.parse(response).forEach((element) => createComment(element));
-    });
+    updateComments();
     commentForm.addEventListener('submit', formEvent );
   });
   closePopUp.addEventListener('click', () => {
