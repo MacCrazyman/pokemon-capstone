@@ -28,11 +28,11 @@
       <ul id="popup_details" class="flex">
         <li class="detail_item flex">
           <p class="detail_property">Height : </p>
-          <p id="property_height" class="detail_property">####</p><span>. in</span>
+          <p id="property_height" class="detail_property">####</p><span>in</span>
         </li>
         <li class="detail_item flex">
           <p class="detail_property">Weight : </p>
-          <p id="property_weight" class="detail_property">####</p><span>. lb</span>
+          <p id="property_weight" class="detail_property">####</p><span>lb</span>
         </li>
         <li class="detail_item flex">
           <p class="detail_property">Base XP : </p>
@@ -45,7 +45,9 @@
       </ul>
       <div id="popup_comments" class="flex">
         <h3>Comments</h3>
-        <div id="comments_box"></div>
+        <div id="comments_box">
+          <table id="comments_table"></table>
+        </div>
       </div>
       <div id="popup_add_comments">
         <h3>Add a comment</h3>
@@ -61,9 +63,11 @@
   </div>
   <!--  Main section -->
 
-  <section id="pokemon-section">
-    <ul id="pokemon-container"></ul>
-  </section>
+  <main>
+    <section id="pokemon-section">
+      <ul id="pokemon-container"></ul>
+    </section>
+  </main>
   
   <footer class="flex">
     <div id="footer-logo"><img id="pokeball-logo" src="5a4f9ca33d0928911e3b.png" alt="Pokeball logo"></div>
