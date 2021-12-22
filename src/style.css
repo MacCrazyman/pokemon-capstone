@@ -1,6 +1,6 @@
 :root {
   --primary-blue: #0075be;
-  --secondary-blue: #0A285F;
+  --secondary-blue: #0a285f;
   --primary-red: #fb1b1b;
   --primary-yellow: #fc0;
   --footer-blue: #30a7d7;
@@ -10,7 +10,7 @@
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
-  padding-inline-start: 0px
+  padding-inline-start: 0;
 }
 
 body {
@@ -74,9 +74,9 @@ footer {
   width: 100%;
   padding: 2em;
   backdrop-filter: blur(5px);
-  transition: 
-  transform 0.5s ease-in-out,
-  opacity 0.5s ease-in-out;
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
 
 #popup_container {
@@ -92,7 +92,7 @@ footer {
 
 #popup_picture_container {
   max-width: 300px;
-  /* background: var(--footer-blue); */
+  text-align: center;
 }
 
 #popup_picture {
@@ -118,11 +118,14 @@ footer {
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
-  text-align: -webkit-center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .detail_item {
   width: 40%;
+  justify-content: center;
 }
 
 .detail_property {
@@ -132,7 +135,9 @@ footer {
 
 #popup_comments {
   width: 100%;
-  text-align: -webkit-center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #comments_box {
@@ -143,13 +148,13 @@ footer {
 }
 
 #popup_add_comments {
-  text-align: -webkit-center;
+  text-align: center;
 }
 
 #add_comment_form {
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem
+  gap: 0.5rem;
 }
 
 .hidden {

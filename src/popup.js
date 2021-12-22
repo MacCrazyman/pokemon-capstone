@@ -6,18 +6,13 @@
 const appId = '2VoylRMjGXYqZZMlt91a';
 const involvementAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}`;
 
+const getComments = (pokemoName) => fetch(`${involvementAPI}/comments?item_id=${pokemoName}`).then((response) => response.text());
 
-const getComments = (pokemon_name) => {
-  return fetch(`${involvementAPI}/comments?item_id=${pokemon_name}`).then((response) => response.text());
-};
-
-const submitComment = (newComment) => {
-  return fetch(`${involvementAPI}/comments`,{
-    method: 'POST',
-    body: JSON.stringify(newComment),
-    headers: { 'Content-type': 'application/json; charset=UTF-8' },
-  });
-}
+const submitComment = (newComment) => fetch(`${involvementAPI}/comments`, {
+  method: 'POST',
+  body: JSON.stringify(newComment),
+  headers: { 'Content-type': 'application/json; charset=UTF-8' },
+});
 
 const fillPopUp = (selectedPokemon) => {
   const picture = document.querySelector('#popup_picture');
@@ -30,7 +25,6 @@ const fillPopUp = (selectedPokemon) => {
   height.textContent = selectedPokemon.height;
   weight.textContent = selectedPokemon.weight;
   baseXp.textContent = selectedPokemon.base_experience;
-}
+};
 
-
-export {fillPopUp, submitComment, getComments}
+export { fillPopUp, submitComment, getComments };
