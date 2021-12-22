@@ -1,9 +1,14 @@
 // IMPORTS
 import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
-
+import { fillPopUp, submitComment, getComments } from './popup.js';
+import { pokemon } from './fake_pokemon.js';
 // ELEMENTS
 const pokemonContainer = document.querySelector('#pokemon-container');
+const commentForm = document.querySelector('#add_comment_form');
+const userField = document.querySelector('#username');
+const commentField = document.querySelector('#comment');
+const commentBox = document.querySelector('#comments_box');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -38,6 +43,22 @@ const getPokemonInfo = async () => {
   });
   return pokemonArray;
 };
+// EVENT LISTENERS
+commentForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const commentItem = {
+    item_id: pokemon.name,
+    username: userField.value,
+    comment: commentField.value,
+  };
+  submitComment(commentItem);
+});
+// CALL FUNCTIONS
+fillPopUp(pokemon);
+
+getComments(pokemon.name).then((Response) => {
+  commentBox.textContent = Response;
+});
 
 getPokemonInfo();
 
