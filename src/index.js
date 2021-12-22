@@ -28,16 +28,29 @@ const createComment = (commentObject) => {
 };
 
 const createLi = (name, image, pokemonInfo) => {
+  // CONSTANT ELEMENTS
   const li = document.createElement('li');
   const imageDiv = document.createElement('div');
   const pokemonImage = document.createElement('img');
   const pokemonName = document.createElement('p');
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
+  // FUNCTIONS FOR EVENT LISTENERS
+  const formEvent = (event)=> {
+    event.preventDefault();
+    const commentItem = {
+      item_id: pokemonInfo.name,
+      username: userField.value,
+      comment: commentField.value,
+    };
+    submitComment(commentItem);
+  }
+  // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
   pokemonImage.src = image;
   likeButton.textContent = 'Like';
   commentButton.textContent = 'Comment';
+  // EVENT LISTENERS
   commentButton.addEventListener('click', () => {
     popUpWindow.classList.remove('hidden');
     popUpWindow.classList.add('show');
@@ -46,7 +59,15 @@ const createLi = (name, image, pokemonInfo) => {
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
     });
+    commentForm.addEventListener('submit', formEvent );
   });
+  closePopUp.addEventListener('click', () => {
+    popUpWindow.classList.remove('show');
+    popUpWindow.classList.add('hidden');
+    commentTable.innerHTML = '';
+    commentForm.removeEventListener('submit', formEvent)
+  });
+  // APPEND ELEMENTS
   imageDiv.appendChild(pokemonImage);
   li.appendChild(imageDiv);
   li.appendChild(pokemonName);
@@ -67,21 +88,8 @@ const getPokemonInfo = async () => {
   return pokemonArray;
 };
 // EVENT LISTENERS
-commentForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const commentItem = {
-    item_id: pokemon.name,
-    username: userField.value,
-    comment: commentField.value,
-  };
-  submitComment(commentItem);
-});
 
-closePopUp.addEventListener('click', () => {
-  popUpWindow.classList.remove('show');
-  popUpWindow.classList.add('hidden');
-  commentTable.innerHTML = '';
-});
+
 // CALL FUNCTIONS
 
 getPokemonInfo();
