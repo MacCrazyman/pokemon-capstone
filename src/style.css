@@ -64,6 +64,10 @@ footer {
   padding: 5px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* Styling for the POP UP Window */
 
 #comments_popup {
@@ -164,4 +168,3 @@ footer {
 
 .show {
   opacity: 1;
-}
