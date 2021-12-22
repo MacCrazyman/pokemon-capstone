@@ -16,7 +16,7 @@ const submitComment = (newComment) => {
     method: 'POST',
     body: JSON.stringify(newComment),
     headers: { 'Content-type': 'application/json; charset=UTF-8' },
-  }).then(Response => Response.json());
+  });
 }
 
 const fillPopUp = (selectedPokemon) => {
