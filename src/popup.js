@@ -5,7 +5,7 @@
 
 const appId = '2VoylRMjGXYqZZMlt91a';
 const involvementAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}`;
-import {pokemon} from './fake_pokemon.js';
+
 
 const getComments = () => {
   return fetch(`${involvementAPI}/comments`).then((Response) => Response.json())
@@ -19,11 +19,18 @@ const submitComment = (newComment) => {
   }).then(Response => Response.json());
 }
 
-const fillPopUp = () => {
+const fillPopUp = (selectedPokemon) => {
   const picture = document.querySelector('#popup_picture');
   const name = document.querySelector('#popup_title');
-  picture.src = pokemon.sprites.other.dream_world.front_default;
-  name.textContent = pokemon.name;
+  const height = document.querySelector('#property_height');
+  const weight = document.querySelector('#property_weight');
+  const baseXp = document.querySelector('#property_baseXp');
+  picture.src = selectedPokemon.sprites.other.dream_world.front_default;
+  name.textContent = selectedPokemon.name;
+  height.textContent = selectedPokemon.height;
+  weight.textContent = selectedPokemon.weight;
+  baseXp.textContent = selectedPokemon.base_experience;
 }
 
-export {fillPopUp}
+
+export {fillPopUp, submitComment}

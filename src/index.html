@@ -18,14 +18,31 @@
     </nav>
   </header>
   <!-- POP - UP section -->
-  <div id="comments_popup" class="hidden">
+  <div id="comments_popup" class="show">
     <div id="popup_container" class="flex">
       <div id="popup_picture_container">
-        <img src="./img/Pokemon_placeholder.png" alt="pokemon picture" id="popup_picture">
+        <img src="#" alt="pokemon picture" id="popup_picture">
         <h2 id="popup_title"></h2>
       </div>
       <div id="popup_close"><p>&#10060</p></div>
-      <div id="popup_details"></div>
+      <ul id="popup_details">
+        <li class="detail_item flex">
+          <p class="detail_property">Height : </p>
+          <p id="property_height" class="detail_property">####</p><span>. in</span>
+        </li>
+        <li class="detail_item flex">
+          <p class="detail_property">Weight : </p>
+          <p id="property_weight" class="detail_property">####</p><span>. lb</span>
+        </li>
+        <li class="detail_item flex">
+          <p class="detail_property">Base XP : </p>
+          <p id="property_baseXp" class="detail_property">####</p>
+        </li>
+        <li class="detail_item flex">
+          <p class="detail_property"></p>
+          <p class="detail_property"></p>
+        </li>
+      </ul>
       <div id="popup_comments">
         <h3>Comments</h3>
         <div id="comments_box"></div>

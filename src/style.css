@@ -10,6 +10,7 @@
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
+  padding-inline-start: 0px
 }
 
 body {
@@ -91,13 +92,16 @@ footer {
 
 #popup_picture_container {
   max-width: 300px;
-  box-shadow: 0 0 0 10px var(--secondary-blue);
-  background: var(--footer-blue);
-  border-radius: 10px;
+  /* background: var(--footer-blue); */
 }
 
 #popup_picture {
   width: 100%;
+  box-shadow: 0 0 0 10px var(--secondary-blue);
+  border-radius: 10px;
+  background: url(./img/Pokemon_placeholder.png), var(--footer-blue);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #popup_close {
@@ -114,6 +118,16 @@ footer {
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
+  text-align: -webkit-center;
+}
+
+.detail_item {
+  width: 40%;
+}
+
+.detail_property {
+  width: 40%;
+  text-align: right;
 }
 
 #popup_comments {
