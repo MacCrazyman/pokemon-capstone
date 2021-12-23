@@ -46,6 +46,10 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
   const pokemonLikes = likesArray.filter((object) => object.item_id === name);
+  li.classList.add('pokemon-card');
+  pokemonName.classList.add('pokemon-name');
+  likeButton.classList.add('like-button');
+  commentButton.classList.add('comment-button');
 
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {

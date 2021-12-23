@@ -4,6 +4,7 @@
   --primary-red: #fb1b1b;
   --primary-yellow: #fc0;
   --footer-blue: #30a7d7;
+  --border-button-green: #097054;
 }
 
 * {
@@ -11,10 +12,12 @@
   box-sizing: border-box;
   margin: 0;
   padding-inline-start: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
   padding-top: 120px;
+  padding-bottom: 43px;
 }
 
 header {
@@ -50,9 +53,13 @@ a {
   display: flex;
 }
 
+
 #pokemon-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 2%;
+  align-items: center;
+  justify-items: center;
 }
 
 footer {
@@ -75,6 +82,54 @@ footer {
 
 button:hover {
   cursor: pointer;
+}
+
+#pokemons-counter {
+  display: flex;
+}
+
+#homepage-counter {
+  padding-left: 10px;
+  font-size: 15px;
+  align-self: center;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 90px;
+  height: 25px;
+  border: 1px solid var(--border-button-green);
+  border-radius: 5px;
+}
+
+button:hover {
+  border: 2px solid var(--border-button-green);
+}
+
+button:active {
+  border: 2px solid #000;
+}
+
+.pokemon-name {
+  margin-bottom: 5px;
+}
+
+.like-button {
+  margin-bottom: 8px;
+  background-color: var(--primary-yellow);
+  color: #000;
+}
+
+.comment-button {
+  background-color: var(--primary-blue);
+  color: #fff;
+
 }
 
 /* Styling for the POP UP Window */
@@ -206,14 +261,4 @@ label {
 
 .show {
   opacity: 1;
-}
-
-#counter {
-  display: flex;
-}
-
-#homepage-counter {
-  padding-left: 10px;
-  font-size: 20px;
-  align-self: center;
 }
