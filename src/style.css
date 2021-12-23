@@ -167,6 +167,15 @@ button:hover {
   overflow-y: auto;
 }
 
+#comments-table tr {
+  display: flex;
+  gap: 1rem;
+}
+
+#comments-table td {
+  flex: 1 1 1;
+}
+
 #popup-add-comments {
   text-align: center;
 }
