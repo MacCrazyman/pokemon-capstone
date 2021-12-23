@@ -24,8 +24,8 @@ const fillPopUp = (selectedPokemon) => {
   baseXp.textContent = selectedPokemon.base_experience;
 };
 
-const countComments = (commentsArray) => {
-  return commentsArray.length;
-}
+const countComments = (commentsArray) => commentsArray.length;
 
-export { fillPopUp, submitComment, getComments, countComments };
+export {
+  fillPopUp, submitComment, getComments, countComments,
+};

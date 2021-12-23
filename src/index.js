@@ -1,7 +1,9 @@
 // IMPORTS
 import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
-import { fillPopUp, submitComment, getComments, countComments } from './popup.js';
+import {
+  fillPopUp, submitComment, getComments, countComments,
+} from './popup.js';
 import { submitLikes, renderLikes } from './likes.js';
 
 // ELEMENTS
@@ -48,7 +50,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
       commentsNumber.textContent = 'Be the first one to comment';
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
-      let commentsAmmount = countComments(JSON.parse(response));
+      const commentsAmmount = countComments(JSON.parse(response));
       commentsNumber.textContent = ` (${commentsAmmount})`;
     });
   };
