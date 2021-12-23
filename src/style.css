@@ -53,7 +53,6 @@ a {
   display: flex;
 }
 
-
 #pokemon-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -78,10 +77,6 @@ footer {
 #pokeball-logo {
   width: 100%;
   padding: 5px;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 #pokemons-counter {
@@ -109,6 +104,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   border: 2px solid var(--border-button-green);
 }
 
@@ -129,14 +125,13 @@ button:active {
 .comment-button {
   background-color: var(--primary-blue);
   color: #fff;
-
 }
 
 #submit-comment {
   padding: 0.5rem;
   font-weight: bold;
   width: fit-content;
-  height: fit-content;
+  height: auto;
 }
 
 /* Styling for the POP UP Window */
@@ -179,7 +174,7 @@ button:active {
   background: url(./img/Pokemon_placeholder.png), var(--footer-blue);
   background-repeat: no-repeat;
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   margin: 0.5rem;
 }
 
@@ -233,11 +228,14 @@ button:active {
   width: 100%;
 }
 
+tr:nth-last-child(even) {
+  background: lightblue;
+}
+
 #comments-table tr {
   display: flex;
   gap: 1rem;
   width: 100%;
-
 }
 
 td {
@@ -247,10 +245,6 @@ td {
 
 td:last-child {
   flex-grow: 2;
-}
-
-tr:nth-last-child(even) {
-  background: lightblue;
 }
 
 #popup-add-comments {
