@@ -94,7 +94,7 @@ button:hover {
 }
 
 #popup-container {
-  background: white;
+  background: var(--primary-yellow);
   border: 5px solid var(--secondary-blue);
   padding: 1em;
   flex-direction: column;
@@ -133,6 +133,7 @@ button:hover {
 }
 
 #popup-details {
+  background: white;
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
@@ -159,6 +160,7 @@ button:hover {
 }
 
 #comments-box {
+  background: white;
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
@@ -167,6 +169,10 @@ button:hover {
 
 #popup-add-comments {
   text-align: center;
+}
+
+label {
+  font-weight: bold;
 }
 
 #add-comment-form {
