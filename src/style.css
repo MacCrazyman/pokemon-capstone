@@ -252,6 +252,23 @@ label {
   gap: 0.5rem;
 }
 
+textarea {
+  resize: none;
+}
+
+textarea::-webkit-resizer {
+  display: none;
+}
+
+.form-input:focus-visible {
+  background: var(--footer-blue);
+  outline: 3px dashed  red;
+}
+
+.form-input:focus-visible::placeholder {
+  color: #000;
+}
+
 .detail-item > span {
   margin-left: 5px;
 }
