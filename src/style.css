@@ -188,3 +188,13 @@ button:hover {
 .show {
   opacity: 1;
 }
+
+#counter {
+  display: flex;
+}
+
+#homepage-counter {
+  padding-left: 10px;
+  font-size: 20px;
+  align-self: center;
+}

@@ -3,6 +3,7 @@ import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
 import { fillPopUp, submitComment, getComments } from './popup.js';
 import { submitLikes, renderLikes } from './likes.js';
+import homepageCounter from './homepageCounter.js';
 
 // ELEMENTS
 const popUpWindow = document.querySelector('#comments-popup');
@@ -12,6 +13,7 @@ const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
 const commentTable = document.querySelector('#comments-table');
 const closePopUp = document.querySelector('#popup-close');
+const pokemonNumber = document.querySelector('#homepage-counter');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -113,6 +115,8 @@ const getPokemonInfo = async (likes) => {
     const element = createLi(capitalizeString(data.name), data.sprites.front_shiny, data, likes);
     pokemonContainer.appendChild(element);
   });
+  const pokemons = homepageCounter(array);
+  pokemonNumber.textContent = pokemons;
   return pokemonArray;
 };
 
