@@ -267,7 +267,7 @@ button:active {
   width: 100%;
 }
 
-tr:nth-last-child(even) {
+tr:nth-child(even) {
   background: lightblue;
 }
 
