@@ -4,6 +4,7 @@
   --primary-red: #fb1b1b;
   --primary-yellow: #fc0;
   --footer-blue: #30a7d7;
+  --border-button-green: #097054;
 }
 
 * {
@@ -11,10 +12,12 @@
   box-sizing: border-box;
   margin: 0;
   padding-inline-start: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
   padding-top: 120px;
+  padding-bottom: 43px;
 }
 
 header {
@@ -30,12 +33,27 @@ nav {
   align-items: center;
 }
 
+#navbar {
+  justify-content: space-between;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 #navbar-ul {
   gap: 20px;
+  padding-right: 60px;
+}
+
+.navbar-links {
+  color: var(--secondary-blue);
+}
+
+.navbar-links:hover {
+  font-size: 18px;
+  transition: font-size 0.3s;
 }
 
 #header-logo {
@@ -52,7 +70,10 @@ a {
 
 #pokemon-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2%;
+  align-items: center;
+  justify-items: center;
 }
 
 footer {
@@ -73,8 +94,75 @@ footer {
   padding: 5px;
 }
 
+#pokemons-counter {
+  display: flex;
+}
+
+#homepage-counter {
+  padding-left: 10px;
+  font-size: 15px;
+  align-self: center;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--secondary-blue);
+  border-radius: 10px;
+  background-color: rgba(0, 117, 190, 0.4);
+  width: 230px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.pokemon-image {
+  width: 100%;
+}
+
+button {
+  width: 90px;
+  height: 25px;
+  border: 1px solid var(--border-button-green);
+  border-radius: 5px;
+}
+
 button:hover {
   cursor: pointer;
+}
+
+button:active {
+  border: 2px solid #000;
+}
+
+.pokemon-name {
+  margin-bottom: 5px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.like-button {
+  margin-bottom: 8px;
+  background-color: var(--primary-yellow);
+  color: #000;
+}
+
+.like-button:hover {
+  border: 2px solid var(--border-button-green);
+}
+
+.comment-button {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+
+.comment-button:hover {
+  border: 2px solid var(--primary-red);
 }
 
 /* Styling for the POP UP Window */
@@ -187,14 +275,4 @@ button:hover {
 
 .show {
   opacity: 1;
-}
-
-#counter {
-  display: flex;
-}
-
-#homepage-counter {
-  padding-left: 10px;
-  font-size: 20px;
-  align-self: center;
 }
