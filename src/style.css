@@ -132,6 +132,13 @@ button:active {
 
 }
 
+#submit-comment {
+  padding: 0.5rem;
+  font-weight: bold;
+  width: fit-content;
+  height: fit-content;
+}
+
 /* Styling for the POP UP Window */
 
 #comments-popup {
