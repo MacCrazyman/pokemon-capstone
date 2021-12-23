@@ -41,6 +41,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
   const pokemonLikes = likesArray.filter((object) => object.item_id === name);
+  
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {
     getComments(pokemonInfo.name).then((response) => {
@@ -61,6 +62,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
       cleanForm();
     });
   };
+
   // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
   pokemonImage.src = image;
@@ -70,6 +72,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
     likeButton.textContent = `Like ${pokemonLikes[0].likes}`;
   }
   commentButton.textContent = 'Comment';
+
   // EVENT LISTENERS
   commentButton.addEventListener('click', () => {
     popUpWindow.classList.remove('hidden');
@@ -85,6 +88,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
     commentForm.removeEventListener('submit', formEvent);
     cleanForm();
   });
+
   // APPEND ELEMENTS
   likeButton.addEventListener('click', () => {
     const likeObject = {
@@ -111,12 +115,9 @@ const getPokemonInfo = async (likes) => {
   });
   return pokemonArray;
 };
-// EVENT LISTENERS
 
 // CALL FUNCTIONS
 renderLikes().then((response) => getPokemonInfo(response));
-
-// getPokemonInfo();
 
 // EXPORTS
 export { createLi, capitalizeString, pokemonContainer };
