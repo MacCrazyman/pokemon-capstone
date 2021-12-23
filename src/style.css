@@ -102,6 +102,7 @@ button:hover {
   position: relative;
   overflow-y: auto;
   height: 90vh;
+  gap: 0.5em;
 }
 
 #popup-picture-container {
@@ -116,6 +117,7 @@ button:hover {
   background: url(./img/Pokemon_placeholder.png), var(--footer-blue);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0.5rem;
 }
 
 #popup-close {
