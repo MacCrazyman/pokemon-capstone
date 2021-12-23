@@ -2,7 +2,6 @@
 import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
 import { fillPopUp, submitComment, getComments } from './popup.js';
-import { pokemon } from './fake_pokemon.js';
 import { submitLikes, renderLikes } from './likes.js';
 
 // ELEMENTS
