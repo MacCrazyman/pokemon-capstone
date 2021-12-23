@@ -12,11 +12,11 @@ const submitComment = (newComment) => fetch(`${involvementAPI}/comments`, {
 });
 
 const fillPopUp = (selectedPokemon) => {
-  const picture = document.querySelector('#popup_picture');
-  const name = document.querySelector('#popup_title');
-  const height = document.querySelector('#property_height');
-  const weight = document.querySelector('#property_weight');
-  const baseXp = document.querySelector('#property_baseXp');
+  const picture = document.querySelector('#popup-picture');
+  const name = document.querySelector('#popup-title');
+  const height = document.querySelector('#property-height');
+  const weight = document.querySelector('#property-weight');
+  const baseXp = document.querySelector('#property-baseXp');
   picture.src = selectedPokemon.sprites.other.dream_world.front_default;
   name.textContent = capitalizeString(selectedPokemon.name);
   height.textContent = selectedPokemon.height;

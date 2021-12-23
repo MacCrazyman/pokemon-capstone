@@ -7,17 +7,20 @@ import {
 import { submitLikes, renderLikes } from './likes.js';
 
 // ELEMENTS
-const popUpWindow = document.querySelector('#comments_popup');
+const popUpWindow = document.querySelector('#comments-popup');
 const pokemonContainer = document.querySelector('#pokemon-container');
-const commentForm = document.querySelector('#add_comment_form');
+const commentForm = document.querySelector('#add-comment-form');
 const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
-const commentTable = document.querySelector('#comments_table');
-const closePopUp = document.querySelector('#popup_close');
-const commentsNumber = document.querySelector('#comments_number');
+const commentTable = document.querySelector('#comments-table');
+const closePopUp = document.querySelector('#popup-close');
+const pokemonNumber = document.querySelector('#homepage-counter');
+const commentsNumber = document.querySelector('#comments-number');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+const homepageCounter = (items) => items.length;
 
 const createComment = (commentObject) => {
   const commentRow = document.createElement('tr');
@@ -44,6 +47,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
   const pokemonLikes = likesArray.filter((object) => object.item_id === name);
+
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {
     getComments(pokemonInfo.name).then((response) => {
@@ -67,6 +71,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
       cleanForm();
     });
   };
+
   // SET PROPERTIES OF ELEMENTS
   pokemonName.textContent = name;
   pokemonImage.src = image;
@@ -76,6 +81,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
     likeButton.textContent = `Like ${pokemonLikes[0].likes}`;
   }
   commentButton.textContent = 'Comment';
+
   // EVENT LISTENERS
   commentButton.addEventListener('click', () => {
     popUpWindow.classList.remove('hidden');
@@ -91,6 +97,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
     commentForm.removeEventListener('submit', formEvent);
     cleanForm();
   });
+
   // APPEND ELEMENTS
   likeButton.addEventListener('click', () => {
     const likeObject = {
@@ -115,14 +122,13 @@ const getPokemonInfo = async (likes) => {
     const element = createLi(capitalizeString(data.name), data.sprites.front_shiny, data, likes);
     pokemonContainer.appendChild(element);
   });
+  const pokemons = homepageCounter(array);
+  pokemonNumber.textContent = pokemons;
   return pokemonArray;
 };
-// EVENT LISTENERS
 
 // CALL FUNCTIONS
 renderLikes().then((response) => getPokemonInfo(response));
-
-// getPokemonInfo();
 
 // EXPORTS
 export { createLi, capitalizeString, pokemonContainer };
