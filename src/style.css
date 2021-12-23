@@ -68,7 +68,6 @@ a {
   display: flex;
 }
 
-
 #pokemon-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -93,10 +92,6 @@ footer {
 #pokeball-logo {
   width: 100%;
   padding: 5px;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 #pokemons-counter {
@@ -133,6 +128,9 @@ button {
   border-radius: 5px;
 }
 
+button:hover {
+  cursor: pointer;
+}
 
 button:active {
   border: 2px solid #000;
