@@ -116,7 +116,8 @@ button:hover {
   border-radius: 10px;
   background: url(./img/Pokemon_placeholder.png), var(--footer-blue);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
+  background-size:cover;
   margin: 0.5rem;
 }
 
