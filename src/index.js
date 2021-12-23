@@ -5,13 +5,13 @@ import { fillPopUp, submitComment, getComments } from './popup.js';
 import { submitLikes, renderLikes } from './likes.js';
 
 // ELEMENTS
-const popUpWindow = document.querySelector('#comments_popup');
+const popUpWindow = document.querySelector('#comments-popup');
 const pokemonContainer = document.querySelector('#pokemon-container');
-const commentForm = document.querySelector('#add_comment_form');
+const commentForm = document.querySelector('#add-comment-form');
 const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
-const commentTable = document.querySelector('#comments_table');
-const closePopUp = document.querySelector('#popup_close');
+const commentTable = document.querySelector('#comments-table');
+const closePopUp = document.querySelector('#popup-close');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -41,7 +41,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
   const pokemonLikes = likesArray.filter((object) => object.item_id === name);
-  
+
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {
     getComments(pokemonInfo.name).then((response) => {
