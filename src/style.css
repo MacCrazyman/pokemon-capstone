@@ -33,12 +33,27 @@ nav {
   align-items: center;
 }
 
+#navbar {
+  justify-content: space-between;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 #navbar-ul {
   gap: 20px;
+  padding-right: 60px;
+}
+
+.navbar-links {
+  color: var(--secondary-blue);
+}
+
+.navbar-links:hover {
+  font-size: 18px;
+  transition: font-size 0.3s;
 }
 
 #header-logo {
