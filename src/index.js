@@ -1,7 +1,9 @@
 // IMPORTS
 import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
-import { fillPopUp, submitComment, getComments } from './popup.js';
+import {
+  fillPopUp, submitComment, getComments, countComments,
+} from './popup.js';
 import { submitLikes, renderLikes } from './likes.js';
 
 // ELEMENTS
@@ -12,6 +14,7 @@ const userField = document.querySelector('#username');
 const commentField = document.querySelector('#comment');
 const commentTable = document.querySelector('#comments_table');
 const closePopUp = document.querySelector('#popup_close');
+const commentsNumber = document.querySelector('#comments_number');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -44,8 +47,11 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {
     getComments(pokemonInfo.name).then((response) => {
+      commentsNumber.textContent = 'Be the first one to comment';
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
+      const commentsAmmount = countComments(JSON.parse(response));
+      commentsNumber.textContent = ` (${commentsAmmount})`;
     });
   };
   const formEvent = (event) => {
