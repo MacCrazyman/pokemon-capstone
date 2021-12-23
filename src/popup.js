@@ -26,4 +26,6 @@ const fillPopUp = (selectedPokemon) => {
 
 const countComments = (commentsArray) => commentsArray.length;
 
-export { fillPopUp, submitComment, getComments, countComments, };
+export {
+  fillPopUp, submitComment, getComments, countComments,
+};

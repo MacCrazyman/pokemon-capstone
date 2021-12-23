@@ -16,6 +16,7 @@ const commentField = document.querySelector('#comment');
 const commentTable = document.querySelector('#comments-table');
 const closePopUp = document.querySelector('#popup-close');
 const pokemonNumber = document.querySelector('#homepage-counter');
+const commentsNumber = document.querySelector('#comments-number');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);

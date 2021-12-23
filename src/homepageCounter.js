@@ -1,2 +1,2 @@
-const homepageCounter = items => items.length;
+const homepageCounter = (items) => items.length;
 export default homepageCounter;
