@@ -130,6 +130,7 @@ button {
 
 button:hover {
   cursor: pointer;
+  border: 2px solid var(--border-button-green);
 }
 
 button:active {
@@ -161,6 +162,13 @@ button:active {
   color: #fff;
 }
 
+#submit-comment {
+  padding: 0.5rem;
+  font-weight: bold;
+  width: fit-content;
+  height: auto;
+}
+
 .comment-button:hover {
   border: 2px solid var(--primary-red);
 }
@@ -171,8 +179,9 @@ button:active {
   position: fixed;
   z-index: 10;
   top: 0;
-  left: 0;
+  left: 100%;
   width: 100%;
+  height: 100%;
   padding: 2em;
   backdrop-filter: blur(5px);
   transition:
@@ -181,7 +190,7 @@ button:active {
 }
 
 #popup-container {
-  background: white;
+  background: var(--primary-yellow);
   border: 5px solid var(--secondary-blue);
   padding: 1em;
   flex-direction: column;
@@ -189,6 +198,7 @@ button:active {
   position: relative;
   overflow-y: auto;
   height: 90vh;
+  gap: 0.5em;
 }
 
 #popup-picture-container {
@@ -202,7 +212,9 @@ button:active {
   border-radius: 10px;
   background: url(./img/Pokemon_placeholder.png), var(--footer-blue);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  margin: 0.5rem;
 }
 
 #popup-close {
@@ -217,6 +229,7 @@ button:active {
 }
 
 #popup-details {
+  background: white;
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
@@ -243,20 +256,73 @@ button:active {
 }
 
 #comments-box {
+  background: white;
   width: 50%;
   height: 150px;
   border: 2px solid var(--secondary-blue);
   overflow-y: auto;
 }
 
+#comments-table {
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background: lightblue;
+}
+
+#comments-table tr {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+td {
+  flex: 1 1;
+  text-align: left;
+}
+
+td:last-child {
+  flex-grow: 2;
+}
+
 #popup-add-comments {
   text-align: center;
+}
+
+#popup-add-comments h3 {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
 }
 
 #add-comment-form {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea::-webkit-resizer {
+  display: none;
+}
+
+.form-input:focus-visible {
+  background: var(--footer-blue);
+  outline: 3px dashed  red;
+}
+
+.form-input:focus-visible::placeholder {
+  color: #000;
 }
 
 .detail-item > span {
@@ -269,10 +335,10 @@ button:active {
 }
 
 .hidden {
-  transform: translate(100%);
   opacity: 0;
 }
 
 .show {
+  transform: translate(-100%);
   opacity: 1;
 }
