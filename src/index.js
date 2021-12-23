@@ -3,6 +3,8 @@ import './style.css';
 import arrayPokemonLinks from './apiFunctions.js';
 import { fillPopUp, submitComment, getComments } from './popup.js';
 import { pokemon } from './fake_pokemon.js';
+import { submitLikes, renderLikes } from './likes.js';
+
 // ELEMENTS
 const popUpWindow = document.querySelector('#comments_popup');
 const pokemonContainer = document.querySelector('#pokemon-container');
@@ -27,16 +29,21 @@ const createComment = (commentObject) => {
   commentTable.appendChild(commentRow);
 };
 
-const createLi = (name, image, pokemonInfo) => {
+const createLi = (name, image, pokemonInfo, likesArray) => {
   const li = document.createElement('li');
   const imageDiv = document.createElement('div');
   const pokemonImage = document.createElement('img');
   const pokemonName = document.createElement('p');
   const likeButton = document.createElement('button');
   const commentButton = document.createElement('button');
+  const pokemonLikes = likesArray.filter((object) => object.item_id === name);
   pokemonName.textContent = name;
   pokemonImage.src = image;
-  likeButton.textContent = 'Like';
+  if (pokemonLikes.length === 0) {
+    likeButton.textContent = 'Like';
+  } else {
+    likeButton.textContent = `Like ${pokemonLikes[0].likes}`;
+  }
   commentButton.textContent = 'Comment';
   commentButton.addEventListener('click', () => {
     popUpWindow.classList.remove('hidden');
@@ -47,6 +54,12 @@ const createLi = (name, image, pokemonInfo) => {
       JSON.parse(response).forEach((element) => createComment(element));
     });
   });
+  likeButton.addEventListener('click', () => {
+    const likeObject = {
+      item_id: name,
+    };
+    submitLikes(likeObject).then(() => window.location.reload());
+  });
   imageDiv.appendChild(pokemonImage);
   li.appendChild(imageDiv);
   li.appendChild(pokemonName);
@@ -55,13 +68,13 @@ const createLi = (name, image, pokemonInfo) => {
   return li;
 };
 
-const getPokemonInfo = async () => {
+const getPokemonInfo = async (likes) => {
   const array = await arrayPokemonLinks();
   const pokemonArray = [];
   array.forEach(async (url) => {
     const data = await fetch(url).then((response) => response.json());
     pokemonArray.push(data);
-    const element = createLi(capitalizeString(data.name), data.sprites.front_shiny, data);
+    const element = createLi(capitalizeString(data.name), data.sprites.front_shiny, data, likes);
     pokemonContainer.appendChild(element);
   });
   return pokemonArray;
@@ -83,8 +96,9 @@ closePopUp.addEventListener('click', () => {
   commentTable.innerHTML = '';
 });
 // CALL FUNCTIONS
+renderLikes().then((response) => getPokemonInfo(response));
 
-getPokemonInfo();
+// getPokemonInfo();
 
 // EXPORTS
 export { createLi, capitalizeString, pokemonContainer };
