@@ -229,17 +229,36 @@ button:active {
   overflow-y: auto;
 }
 
+#comments-table {
+  width: 100%;
+}
+
 #comments-table tr {
   display: flex;
   gap: 1rem;
+  width: 100%;
+
 }
 
-#comments-table td {
-  flex: 1 1 1;
+td {
+  flex: 1 1;
+  text-align: left;
+}
+
+td:last-child {
+  flex-grow: 2;
+}
+
+tr:nth-last-child(even) {
+  background: lightblue;
 }
 
 #popup-add-comments {
   text-align: center;
+}
+
+#popup-add-comments h3 {
+  margin-bottom: 1rem;
 }
 
 label {
@@ -250,6 +269,10 @@ label {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+input {
+  width: 100%;
 }
 
 textarea {
