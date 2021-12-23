@@ -5,7 +5,6 @@ import {
   fillPopUp, submitComment, getComments, countComments,
 } from './popup.js';
 import { submitLikes, renderLikes } from './likes.js';
-import homepageCounter from './homepageCounter.js';
 
 // ELEMENTS
 const popUpWindow = document.querySelector('#comments-popup');
@@ -20,6 +19,8 @@ const commentsNumber = document.querySelector('#comments-number');
 
 // FUNCTIONS
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+const homepageCounter = (items) => items.length;
 
 const createComment = (commentObject) => {
   const commentRow = document.createElement('tr');
