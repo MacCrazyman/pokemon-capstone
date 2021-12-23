@@ -50,7 +50,7 @@ const createLi = (name, image, pokemonInfo, likesArray) => {
   // FUNCTIONS FOR EVENT LISTENERS
   const updateComments = () => {
     getComments(pokemonInfo.name).then((response) => {
-      commentsNumber.textContent = 'Be the first one to comment';
+      commentsNumber.textContent = ' Be the first one to comment';
       if (JSON.parse(response).error) return;
       JSON.parse(response).forEach((element) => createComment(element));
       const commentsAmmount = countComments(JSON.parse(response));
