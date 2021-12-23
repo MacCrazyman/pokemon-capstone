@@ -33,12 +33,27 @@ nav {
   align-items: center;
 }
 
+#navbar {
+  justify-content: space-between;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 #navbar-ul {
   gap: 20px;
+  padding-right: 60px;
+}
+
+.navbar-links {
+  color: var(--secondary-blue);
+}
+
+.navbar-links:hover {
+  font-size: 18px;
+  transition: font-size 0.3s;
 }
 
 #header-logo {
@@ -56,7 +71,7 @@ a {
 #pokemon-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 2%;
+  margin: 2%;
   align-items: center;
   justify-items: center;
 }
@@ -94,6 +109,16 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 5px solid var(--secondary-blue);
+  border-radius: 10px;
+  background-color: rgba(0, 117, 190, 0.4);
+  width: 230px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.pokemon-image {
+  width: 100%;
 }
 
 button {
@@ -116,10 +141,20 @@ button:active {
   margin-bottom: 5px;
 }
 
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .like-button {
   margin-bottom: 8px;
   background-color: var(--primary-yellow);
   color: #000;
+}
+
+.like-button:hover {
+  border: 2px solid var(--border-button-green);
 }
 
 .comment-button {
@@ -127,11 +162,16 @@ button:active {
   color: #fff;
 }
 
+
 #submit-comment {
   padding: 0.5rem;
   font-weight: bold;
   width: fit-content;
   height: auto;
+}
+
+.comment-button:hover {
+  border: 2px solid var(--primary-red);
 }
 
 /* Styling for the POP UP Window */
