@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# PROJECT NAME
+# POKEDEX CAPSTONE
 
-> Web page used to retreive information about Pokemons usin pokeapi v2
+> Web page used to retrieve information about Pokemons using Pokeapi v2
 
 ![screenshot](src/img/screenshot.png)
 ![screenshot](src/img/screenshot_2.png)
 
 
 
-This project implements the involvement API and the Pokeapi to display data about several Pokemons and let the user interact leaving likes and comments to treir favourites Pokemons.
+This project implements the involvement API and the Pokeapi to display data about several Pokemons and let the user interact leaving likes and comments to their favourite Pokemons.
 
 ## Built With
 
