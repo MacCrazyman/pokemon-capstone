@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    </style>
+</head>
+<body>
+  <header>
+    <nav id="navbar" class="flex">
+      <a href="#" id="header-logo"><img id="pokemon-logo" src="./img/Pokemon-Logo.png" alt="Pokemon logo"></a>
+      <ul id="navbar-ul" class="flex">
+        <li class="navbar-links" id="pokemons-counter"><a href="#">Pokemons</a><p id="homepage-counter"></p></li>
+        <li class="navbar-links"><a href="#">Games</a></li>
+        <li class="navbar-links"><a href="#">Evolutions</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- POP - UP section -->
+  <div id="comments-popup" class="hidden">
+    <div id="popup-container" class="flex">
+      <div id="popup-picture-container">
+        <img src="#" alt="pokemon picture" id="popup-picture">
+        <h2 id="popup-title"></h2>
+      </div>
+      <div id="popup-close"><p>&#10060;</p></div>
+      <ul id="popup-details" class="flex">
+        <li class="detail-item flex">
+          <p class="detail-property">Height : </p>
+          <p id="property-height" class="detail-property">####</p><span>in</span>
+        </li>
+        <li class="detail-item flex">
+          <p class="detail-property">Weight : </p>
+          <p id="property-weight" class="detail-property">####</p><span>lb</span>
+        </li>
+        <li class="detail-item flex">
+          <p class="detail-property">Base XP : </p>
+          <p id="property-baseXp" class="detail-property">####</p>
+        </li>
+        <li class="detail-item flex">
+          <p class="detail-property"></p>
+          <p class="detail-property"></p>
+        </li>
+      </ul>
+      
+      <div id="popup-comments" class="flex">
+        <h3>Comments</h3><span id="comments-number"></span>
+        <div id="comments-box">
+          <table id="comments-table"></table>
+        </div>
+      </div>
+      <div id="popup-add-comments">
+        <h3>Add a comment</h3>
+        <form id="add-comment-form" action="#" class="flex">
+          <label for="username">User name:</label>
+          <input id="username" class="form-input" type="text" placeholder="Type you username" required>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" class="form-input" cols="30" rows="3" placeholder="Type your comment" required></textarea>
+          <button id="submit-comment" class="comment-button" type="submit"> Submit comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--  Main section -->
+
+  <main>
+    <section id="pokemon-section">
+      <ul id="pokemon-container"></ul>
+    </section>
+  </main>
+  
+  <footer class="flex">
+    <div id="footer-logo"><img id="pokeball-logo" src="./img/Pokeball.png" alt="Pokeball logo"></div>
+    <p>Created by <a href="https://github.com/MacCrazyman">Leonardo Pareja</a> and <a href="https://github.com/vechicin/"> Santiago Velosa</a> under CC License</p>
+  </footer>
+</body>
+</html>

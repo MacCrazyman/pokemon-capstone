@@ -1,26 +1,31 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# PROJECT NAME
+# POKEDEX CAPSTONE
 
-> Short project decription
+> Web page used to retrieve information about Pokemons using Pokeapi v2
 
 ![screenshot](src/img/screenshot.png)
+![screenshot](src/img/screenshot_2.png)
 
-Features description.
+
+
+This project implements the involvement API and the Pokeapi to display data about several Pokemons and let the user interact leaving likes and comments to their favourite Pokemons.
 
 ## Built With
 
 - HTMl, CSS, JavaScript
-- Bootstrap
+- Webpack
+- [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
+- [PokeAPI](https://pokeapi.co/)
 
 ## Live Demo
 
-[Live Demo Link](https://maccrazyman.github.io/)
+[Live Demo Link](https://maccrazyman.github.io/pokemon-capstone/)
 
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy follow these simple example steps.
 
 ### Prerequisites
 * A functional computer with VS Code or any functional coding software.
@@ -30,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 * Copy the repo link and clone it in your local machine
 * You can execute the following command in your git bash:
     ```` 
-    git clone https://github.com/MacCrazyman/.git
+    git clone https://github.com/MacCrazyman/pokemon-capstone.git
     ````
 
 ### Install
@@ -49,21 +54,23 @@ To get a local copy up and running follow these simple example steps.
     ````
     npm run start
     ````
-* You can also open the [GitHub pages deployment](https://maccrazyman.github.io//) to see a live version of the webpage.
+* You can also open the [GitHub pages deployment](https://maccrazyman.github.io/pokemon-capstone/) to see a live version of the webpage.
 
 
 
 ## Authors
+
+👤 **Santiago Velosa**
+
+- GitHub: [@vechicin](https://github.com/vechicin)
+- Twitter: [@therealvelosa](https://twitter.com/therealvelosa)
+- LinkedIn: [Santiago Velosa Arias](https://www.linkedin.com/in/santiago-velosa-arias-5b7543112/)
 
 👤 **Leonardo Pareja**
 
 - GitHub: [@MacCrazyman](https://github.com/MacCrazyman)
 - Twitter: [@MacCrazyman](https://twitter.com/MacCrazyman)
 - LinkedIn: [Leonardo Pareja](https://www.linkedin.com/in/leonardo-pareja-pareja/)
-
-👤 **Author 2**
-
-- GitHub: [@](https://github.com/)
 
 
 ## 🤝 Contributing
